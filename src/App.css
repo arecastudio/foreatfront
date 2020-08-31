@@ -1,0 +1,21 @@
+
+/**/
+/*GLOBAL CSS*/
+.image-store{
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+}
+
+/*Store.js*/
+.store-banner{
+  background:url('sushi2.jpg') no-repeat;
+  background-size:cover;
+  height: 300px;
+}
+.store-submenu{
+  margin-top:0px;
+  border:1px solid white;
+  background-color: #ffffff;
+}
+/**/
