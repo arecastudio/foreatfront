@@ -17,6 +17,7 @@ import Store from './components/pages/Store';
 import Toko from './components/pages/Toko';
 import News from './components/pages/News';
 import Newsdetail from './components/pages/Newsdetail';
+import Member from './components/pages/Member';
 
 function App() {
 
@@ -46,8 +47,8 @@ function App() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+      <div className="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul className="navbar-nav mx-auto">
           <li className="nav-item active">
             <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
           </li>
@@ -77,13 +78,15 @@ function App() {
             <a className="nav-link" href="/news">News</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">Membership</a>
+            <a className="nav-link" href="/member">Membership</a>
           </li>
+{/*
           <li className="nav-item">
             <a className="nav-link" href="/">Gallery</a>
           </li>
+*/}
           <li className="nav-item">
-            <a className="nav-link" href="/about/about">About</a>
+            <a className="nav-link" href="/about">About</a>
           </li>
         </ul>
 {/*
@@ -99,11 +102,12 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/home" component={Home} exact />
       </Switch>
-      <Route path="/about/about" component={About} exact />
+      <Route path="/about" component={About} exact />
       <Route path="/toko/:storeid" component={Toko} exact />
       <Route path="/eat-drink/:storeid" component={Store} />
       <Route path="/news" component={News} exact />
       <Route path="/news/:newsid" component={Newsdetail} />
+      <Route path="/member" component={Member} exact />
 
     <Footer/>
 

@@ -42,7 +42,7 @@ const Store=()=>{
           //this.setState({stores:response})
           const ret=response.filter(r=>r.storeid==x);
           setStorepromo(ret);
-          console.log(ret);
+          //console.log(ret.length);
         })
       } catch (error) {
         console.error(error);
@@ -54,11 +54,49 @@ const Store=()=>{
       setPromo(storepromo.find(el=>el.id==x));
     }
 
+    const isStorePromo=()=>{
+      if(storepromo.length>0){
+        return (
+          <div className="container" id="#store-promo-part">
+                
+          <h3>What you get</h3>
+          <div className="row mx-0 justify-content-centerXXX bg-darkXXX align-item-stretch">
+            {
+                storepromo.map((x,i)=>{
+                    return(
+                      <div className="col-lg-4 p-3 mb-3 text-decoration-none" key={i} id={x.id}>
+
+                          <div className="shadow rounded" data-toggle="modal" data-target="#exampleModal" style={{cursor:'pointer'}} onClick={()=>onPromo(x.id)}>
+                            <div className="">
+                              <img className="img-fluid" alt="" src={x.picture}/>
+                            </div>
+
+                            <div className="p-3">
+                              <h5 className="text-success">{x.title}</h5>
+                            </div>
+                            {/*<div className="p-3">
+                              <p className="text-secondary">Every weekend</p>
+                            </div>*/}
+                          </div>
+                      </div>
+                    );
+                })
+            }
+          </div>
+      </div>
+        );
+      }else{
+        return(
+          <div className="py-3">&nbsp;</div>
+        )
+      }
+    }
+
     return(
         <div className="store-page" id="topdiv">
-          <div className="container-fluid px-0">
+          <div className="container-fluid px-0" style={{marginTop:-150,}}>
               <div className="row">
-                <div className="col-md-12 col-sm-12 col-lg-12 store-banner">
+                <div className="col-md-12 col-sm-12 col-lg-12 store-banner img-bluring">
                 &nbsp;
                 </div>
               </div>
@@ -74,33 +112,9 @@ const Store=()=>{
             </div>
 
 
+            {isStorePromo()}
 
-            <div className="container" id="#store-promo-part">
-                <h3>What you can get</h3>
-                <div className="row mx-0 justify-content-centerXXX bg-darkXXX align-item-stretch">
-                  {
-                      storepromo.map((x,i)=>{
-                          return(
-                            <div className="col-lg-4 p-3 mb-3 text-decoration-none" key={i} id={x.id}>
 
-                                <div className="shadow rounded" data-toggle="modal" data-target="#exampleModal" style={{cursor:'pointer'}} onClick={()=>onPromo(x.id)}>
-                                  <div className="">
-                                    <img className="img-fluid" alt="" src={x.picture}/>
-                                  </div>
-
-                                  <div className="p-3">
-                                    <h5 className="text-success">{x.title}</h5>
-                                  </div>
-                                  {/*<div className="p-3">
-                                    <p className="text-secondary">Every weekend</p>
-                                  </div>*/}
-                                </div>
-                            </div>
-                          );
-                      })
-                  }
-                </div>
-            </div>
 
             <div className="container" id="store-location-part">
                 <h4>Location</h4>

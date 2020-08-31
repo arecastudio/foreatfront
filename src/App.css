@@ -7,6 +7,11 @@
   height: 300px;
 }
 
+.img-bluring{
+  filter: blur(25px);
+  -webkit-filter: blur(25px);
+}
+
 /*Store.js*/
 .store-banner{
   background:url('sushi2.jpg') no-repeat;

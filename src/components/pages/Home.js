@@ -7,6 +7,7 @@ const Home=()=>{
   const [stores,setStores]=useState([]);
   const [news,setNews]=useState([]);
   const [slider,setSlider]=useState([]);
+  const [gallery,setGallery]=useState([]);
 
   useEffect(()=>{
     try {
@@ -31,6 +32,18 @@ const Home=()=>{
     } catch (error) {
       console.error(error);
     }
+
+    try {
+      axios.get(`http://localhost:8000/foreatgallery/`)
+      .then(res => {
+        const response = res.data;
+        setGallery(response);
+        //console.log(response);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+
   },[]);
 
 
@@ -212,7 +225,7 @@ const Home=()=>{
           stores.map((data,x)=>{
             if(data.isActive==true){
               return(
-                <a href={`/eat-drink/${data.slug}`} className="col-lg-3 col-md-4 col-6" title={data.title}>
+                <a href={`/eat-drink/${data.slug}`} className="col-lg-3 col-md-4 col-6" title={data.title} key={x}>
                   <div className="client-logo">
                     <img src={data.cover} className="img-fluid" alt=""/>
                   </div>
@@ -581,12 +594,14 @@ const Home=()=>{
                   <div className="member">
                     <div className="member-img">
                       <img src={data.cover} className="img-fluid" alt=""/>
+                      {/*
                       <div className="social">
-                        <a href=""><i className="icofont-twitter"></i></a>
-                        <a href=""><i className="icofont-facebook"></i></a>
-                        <a href=""><i className="icofont-instagram"></i></a>
-                        <a href=""><i className="icofont-linkedin"></i></a>
+                        <a href="/"><i className="icofont-twitter">&nbsp;</i></a>
+                        <a href="/"><i className="icofont-facebook"></i></a>
+                        <a href="/"><i className="icofont-instagram"></i></a>
+                        <a href="/"><i className="icofont-linkedin"></i></a>
                       </div>
+                      */}
                     </div>
                     <div className="member-info">
                       <h4>{data.title}</h4>
@@ -667,11 +682,29 @@ const Home=()=>{
 
         <div className="section-title">
           <h2>Gallery</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div className="row no-gutters">
 
+
+        {
+          gallery.map((data,x)=>{
+            if(data.isActive==true){
+              return(
+                <div className="col-lg-3 col-md-4" key={x}>
+                  <div className="gallery-item">
+                    <a href={data.picture} className="venobox" data-gall="gallery-item">
+                      <img src={data.picture} alt="" className="img-fluid"/>
+                    </a>
+                  </div>
+                </div>
+              )
+            }
+
+          })
+        }
+
+{/*
           <div className="col-lg-3 col-md-4">
             <div className="gallery-item">
               <a href="assets/img/gallery/web-namasushi.jpg" className="venobox" data-gall="gallery-item">
@@ -735,6 +768,7 @@ const Home=()=>{
               </a>
             </div>
           </div>
+*/}
 
         </div>
 
@@ -746,8 +780,10 @@ const Home=()=>{
       <div className="container">
 
         <div className="section-title">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Hubungi Kami</h2>
+          <p>
+          Anda dapat menghubungi kami melalui form di bawah ini:
+          </p>
         </div>
 
         <div>
@@ -760,19 +796,19 @@ const Home=()=>{
             <div className="info">
               <div className="address">
                 <i className="icofont-google-map"></i>
-                <h4>Location:</h4>
+                <h4>Lokasi</h4>
                 <p>Jl. Tuna, Jakarta Utara, ID 535022</p>
               </div>
 
               <div className="email">
                 <i className="icofont-envelope"></i>
-                <h4>Email:</h4>
+                <h4>Email</h4>
                 <p>info@foreat.co.id</p>
               </div>
 
               <div className="phone">
                 <i className="icofont-phone"></i>
-                <h4>Call:</h4>
+                <h4>Call</h4>
                 <p>+62 5589 55488 55</p>
               </div>
 
@@ -782,7 +818,7 @@ const Home=()=>{
 
           <div className="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" className="php-email-form">
+            <form action="__blank" method="post" role="form" className="php-email-form">
               <div className="form-row">
                 <div className="col-md-6 form-group">
                   <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -806,7 +842,7 @@ const Home=()=>{
                 <div className="error-message"></div>
                 <div className="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div className="text-center"><button type="submit">Send Message</button></div>
+              <div className="text-center"><button type="button" className="btn btn-info">Send Message</button></div>
             </form>
 
           </div>

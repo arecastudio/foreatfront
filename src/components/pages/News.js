@@ -34,12 +34,14 @@ const News=()=>{
                     <div className="member">
                       <div className="member-img">
                         <img src={data.cover} className="img-fluid" alt=""/>
+{/*
                         <div className="social">
                           <a href=""><i className="icofont-twitter"></i></a>
                           <a href=""><i className="icofont-facebook"></i></a>
                           <a href=""><i className="icofont-instagram"></i></a>
                           <a href=""><i className="icofont-linkedin"></i></a>
                         </div>
+*/}
                       </div>
                       <div className="member-info">
                         <h4>{data.title}</h4>
