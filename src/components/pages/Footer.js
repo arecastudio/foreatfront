@@ -9,7 +9,7 @@ const Footer=()=>{
         <div className="row justify-content-center">
           <div className="col-lg-6">
             <h4>Join Our Newsletter</h4>
-            <p>Untuk mendapatkan update terbaru dari kami, silahkan daftarkan email anda melalui form di bawah ini</p>
+            <p>Enter you mail here to get more information about our new products</p>
             <form action="" method="post">
               <input type="email" name="email" /><input type="submit" value="Subscribe" />
             </form>
@@ -25,9 +25,9 @@ const Footer=()=>{
           <div className="col-lg-3 col-md-6 footer-contact">
             <h3>Foreat</h3>
             <p>
-              A108 Adam Street <br/>
-              New York, NY 535022<br/>
-              United States <br/><br/>
+            Jl. Tuna, Jakarta Utara<br/>
+            ID 535022
+            <br/><br/>
               <strong>Phone:</strong> +62 5589 55488 55<br/>
               <strong>Email:</strong> info@foreat.co.id<br/>
             </p>

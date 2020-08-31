@@ -300,7 +300,6 @@ const Home=()=>{
 
         <div className="section-title">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div className="row">
@@ -581,7 +580,7 @@ const Home=()=>{
 
         <div className="section-title">
           <h2>News</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Stay update with our product and info here</p>
         </div>
 
         <div className="row justify-content-center">
@@ -682,6 +681,7 @@ const Home=()=>{
 
         <div className="section-title">
           <h2>Gallery</h2>
+          <p>Here some of our product update</p>
         </div>
 
         <div className="row no-gutters">
@@ -780,10 +780,8 @@ const Home=()=>{
       <div className="container">
 
         <div className="section-title">
-          <h2>Hubungi Kami</h2>
-          <p>
-          Anda dapat menghubungi kami melalui form di bawah ini:
-          </p>
+          <h2>Contact Us</h2>
+          <p>Please feel free to contact us by filling the form bellow</p>
         </div>
 
         <div>
@@ -796,7 +794,7 @@ const Home=()=>{
             <div className="info">
               <div className="address">
                 <i className="icofont-google-map"></i>
-                <h4>Lokasi</h4>
+                <h4>Location</h4>
                 <p>Jl. Tuna, Jakarta Utara, ID 535022</p>
               </div>
 
