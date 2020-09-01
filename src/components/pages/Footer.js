@@ -21,7 +21,7 @@ const Footer=()=>{
   },[]);
 
     return(
-        <footer id="footer">
+        <footer id="footer" className="mt-5">
 
     <div className="footer-newsletter">
       <div className="container">
