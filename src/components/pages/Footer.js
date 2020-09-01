@@ -1,6 +1,25 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 
 const Footer=()=>{
+
+  const [contact,setContact]=useState([]);
+
+  useEffect(()=>{
+    try {
+      //axios.get(`http://localhost:8000/store/${storeid}/`)
+      axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
+      .then(res => {
+        const response = res.data;
+        //this.setState({stores:response})
+        setContact(response);
+        //console.log(response);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  },[]);
+
     return(
         <footer id="footer">
 
@@ -25,11 +44,10 @@ const Footer=()=>{
           <div className="col-lg-3 col-md-6 footer-contact">
             <h3>Foreat</h3>
             <p>
-            Jl. Tuna, Jakarta Utara<br/>
-            ID 535022
+            {contact.address}
             <br/><br/>
-              <strong>Phone:</strong> +62 5589 55488 55<br/>
-              <strong>Email:</strong> info@foreat.co.id<br/>
+              <strong>Phone:</strong> {contact.phpne}<br/>
+              <strong>Email:</strong> {contact.email}<br/>
             </p>
           </div>
 
@@ -59,11 +77,11 @@ const Footer=()=>{
             <h4>Our Social Networks</h4>
             <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
             <div className="social-links mt-3">
-              <a href="/" className="twitter"><i className="bx bxl-twitter"></i></a>
-              <a href="/" className="facebook"><i className="bx bxl-facebook"></i></a>
-              <a href="/" className="instagram"><i className="bx bxl-instagram"></i></a>
-              <a href="/" className="google-plus"><i className="bx bxl-skype"></i></a>
-              <a href="/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+              <a href={contact.twitter} target="_blank" className="twitter"><i className="bx bxl-twitter"></i></a>
+              <a href={contact.facebook} target="_blank" className="facebook"><i className="bx bxl-facebook"></i></a>
+              <a href={contact.instagram} target="_blank" className="instagram"><i className="bx bxl-instagram"></i></a>
+              <a href={contact.phone} target="_blank" className="google-plus"><i className="bx bxl-whatsapp"></i></a>
+              <a href={contact.linkedin} target="_blank" className="linkedin"><i className="bx bxl-linkedin"></i></a>
             </div>
           </div>
 

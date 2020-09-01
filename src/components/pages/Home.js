@@ -9,8 +9,24 @@ const Home=()=>{
   const [slider,setSlider]=useState([]);
   const [servis,setServis]=useState([]);
   const [gallery,setGallery]=useState([]);
+  const [contact,setContact]=useState([]);
 
   useEffect(()=>{
+
+
+    try {
+      //axios.get(`http://localhost:8000/store/${storeid}/`)
+      axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
+      .then(res => {
+        const response = res.data;
+        //this.setState({stores:response})
+        setContact(response);
+        //console.log(response);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+
     try {
       //axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
       axios.get(`http://localhost:3006/dummy/store.json`)
@@ -832,19 +848,19 @@ const Home=()=>{
               <div className="address">
                 <i className="icofont-google-map"></i>
                 <h4>Location</h4>
-                <p>Jl. Tuna, Jakarta Utara, ID 535022</p>
+                <p>{contact.address}</p>
               </div>
 
               <div className="email">
                 <i className="icofont-envelope"></i>
                 <h4>Email</h4>
-                <p>info@foreat.co.id</p>
+                <p>{contact.email}</p>
               </div>
 
               <div className="phone">
                 <i className="icofont-phone"></i>
                 <h4>Call</h4>
-                <p>+62 5589 55488 55</p>
+                <p>{contact.phone}</p>
               </div>
 
             </div>
