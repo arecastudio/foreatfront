@@ -16,7 +16,8 @@ const NewsDetail=()=>{
         try {
             //const response= axios.get('http://localhost:8000/store/');
             //console.log('RESPONSE: '+JSON.stringify(response));
-          axios.get(`http://localhost:8000/news/${newsid}/`)
+          //axios.get(`http://localhost:8000/news/${newsid}/`)
+          axios.get(`http://localhost:3006/dummy/newsdetail.json`)
           .then(res => {
             const response = res.data;
             //this.setState({stores:response})

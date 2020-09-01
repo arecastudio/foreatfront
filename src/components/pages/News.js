@@ -7,7 +7,8 @@ const News=()=>{
 
   useEffect(()=>{
     try {
-      axios.get(`http://localhost:8000/news/`)
+      //axios.get(`http://localhost:8000/news/`)
+      axios.get(`http://localhost:3006/dummy/news.json`)
         .then(res => {
           const response = res.data;
           setNews(response);
@@ -28,7 +29,7 @@ const News=()=>{
           <div className="row justify-content-center">
           {
             news.map((data,x)=>{
-              if(data.isActive==true){
+              if(true==true){
                 return(
                   <a href={`/news/${data.slug}`} key={x} className="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div className="member">

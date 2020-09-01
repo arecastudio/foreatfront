@@ -19,7 +19,8 @@ const Store=()=>{
     useEffect(()=>{
 
         try {
-          axios.get(`http://localhost:8000/store/${storeid}/`)
+          //axios.get(`http://localhost:8000/store/${storeid}/`)
+          axios.get(`http://localhost:3006/dummy/storeitem.json`)
           .then(res => {
             const response = res.data;
             //this.setState({stores:response})
@@ -36,13 +37,15 @@ const Store=()=>{
 
     const getStorepromo=(x)=>{
       try {
-        axios.get(`http://localhost:8000/storepromo`)
+        //axios.get(`http://localhost:8000/storepromo`)
+        axios.get(`http://localhost:3006/dummy/storepromo.json`)
         .then(res => {
           const response = res.data;
           //this.setState({stores:response})
-          const ret=response.filter(r=>r.storeid==x);
+          let ret=response.filter(r=>r.storeid==x);
+          ret=response;
           setStorepromo(ret);
-          //console.log(ret.length);
+          console.log(ret.length);
         })
       } catch (error) {
         console.error(error);

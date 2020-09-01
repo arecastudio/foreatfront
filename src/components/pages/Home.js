@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
+import dStore from '../dummy/store.json';
 
 
 const Home=()=>{
@@ -7,11 +8,13 @@ const Home=()=>{
   const [stores,setStores]=useState([]);
   const [news,setNews]=useState([]);
   const [slider,setSlider]=useState([]);
+  const [servis,setServis]=useState([]);
   const [gallery,setGallery]=useState([]);
 
   useEffect(()=>{
     try {
-      axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
+      //axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
+      axios.get(`http://localhost:3006/dummy/store.json`)
       .then(res => {
         const response = res.data;
         setStores(response);
@@ -21,20 +24,35 @@ const Home=()=>{
       console.error(error);
     }
 
-
     try {
-      axios.get(`http://localhost:8000/news/?query={id, slug, title, cover, created, isActive}`)
+      //axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
+      axios.get(`http://localhost:3006/dummy/foreatservice.json`)
       .then(res => {
         const response = res.data;
-        setNews(response);
+        setServis(response);
         //console.log(response);
       })
     } catch (error) {
       console.error(error);
     }
 
+
+
     try {
-      axios.get(`http://localhost:8000/foreatgallery/`)
+      //axios.get(`http://localhost:8000/news/?query={id, slug, title, cover, created, isActive}`)
+      axios.get(`http://localhost:3006/dummy/news.json`)
+      .then(res => {
+        const response = res.data;
+        setNews(response);
+        console.log(response);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+
+    try {
+      //axios.get(`http://localhost:8000/foreatgallery/`)
+      axios.get(`http://localhost:3006/dummy/foreatgallery.json`)
       .then(res => {
         const response = res.data;
         setGallery(response);
@@ -303,9 +321,28 @@ const Home=()=>{
         </div>
 
         <div className="row">
+
+        {
+          servis.map((data,x)=>{
+            if(data.isActive==true){
+              return(
+                <div className="col-lg-4 col-md-6" key={x}>
+                  <div className="icon-box">
+                    <div className="icon"><i className="las la-paperclip" style={{color: '#ff689b'}}></i></div>
+                    <h4 className="title"><a href="">Lorem Ipsum</a></h4>
+                    <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                  </div>
+                </div>
+                )
+            }
+
+          })
+        }
+
+{/*
           <div className="col-lg-4 col-md-6">
             <div className="icon-box">
-              <div className="icon"><i className="las la-basketball-ball" style={{color: '#ff689b'}}></i></div>
+              <div className="icon"><i className="las la-paperclip" style={{color: '#ff689b'}}></i></div>
               <h4 className="title"><a href="">Lorem Ipsum</a></h4>
               <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
@@ -347,6 +384,7 @@ const Home=()=>{
               <p className="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
             </div>
           </div>
+*/}
         </div>
 
       </div>
@@ -587,7 +625,7 @@ const Home=()=>{
 
         {
           news.slice(0,3).map((data,x)=>{
-            if(data.isActive==true){
+            if(true==true){
               return(
                 <a href={`/news/${data.slug}`} key={x} className="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div className="member">
@@ -689,7 +727,7 @@ const Home=()=>{
 
         {
           gallery.map((data,x)=>{
-            if(data.isActive==true){
+            if(true==true){
               return(
                 <div className="col-lg-3 col-md-4" key={x}>
                   <div className="gallery-item">
