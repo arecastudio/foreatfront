@@ -75,7 +75,7 @@ const Footer=()=>{
 
           <div className="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <p>Stay up to date by following our social medias</p>
             <div className="social-links mt-3">
               <a href={contact.twitter} target="_blank" className="twitter"><i className="bx bxl-twitter"></i></a>
               <a href={contact.facebook} target="_blank" className="facebook"><i className="bx bxl-facebook"></i></a>
