@@ -25,7 +25,8 @@ function App() {
 
   useEffect(()=>{
     try{
-      axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
+      //axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
+      axios.get(`http://localhost:3006/dummy/store.json`)
       .then(res => {
         const response = res.data;
         //this.setState({stores:response})

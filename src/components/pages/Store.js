@@ -70,7 +70,7 @@ const Store=()=>{
                       <div className="col-lg-4 p-3 mb-3 text-decoration-none" key={i} id={x.id}>
 
                           <div className="shadow rounded" data-toggle="modal" data-target="#exampleModal" style={{cursor:'pointer'}} onClick={()=>onPromo(x.id)}>
-                            <div className="">
+                            <div className="text-center">
                               <img className="img-fluid" alt="" src={x.picture}/>
                             </div>
 
@@ -136,7 +136,7 @@ const Store=()=>{
                     </button>
                   </div>
                   <div className="modal-body">
-                    <div className="">
+                    <div className="text-center">
                       <img src={promo.picture} className="img-fluid"/>
                     </div>
                     <div className="text-justify pt-3">

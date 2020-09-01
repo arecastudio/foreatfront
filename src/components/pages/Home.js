@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
-import dStore from '../dummy/store.json';
 
 
 const Home=()=>{
