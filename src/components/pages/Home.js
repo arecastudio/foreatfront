@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
-
+import Slider from './Slider';
 
 const Home=()=>{
 
@@ -59,7 +59,7 @@ const Home=()=>{
       .then(res => {
         const response = res.data;
         setNews(response);
-        console.log(response);
+        //console.log(response);
       })
     } catch (error) {
       console.error(error);
@@ -82,27 +82,30 @@ const Home=()=>{
 
     return(
         <div className="page-home">
+          <Slider/>
+{/*
         <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="assets/img/gallery/gallery-9.jpg" className="d-block w-100" alt="..."/>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src="assets/img/gallery/gallery-9.jpg" className="d-block w-100" alt="..."/>
+            </div>
+            <div className="carousel-item">
+              <img src="assets/img/gallery/gallery-10.jpg" className="d-block w-100" alt="..."/>
+            </div>
+            <div className="carousel-item">
+              <img src="assets/img/gallery/gallery-11.jpg" className="d-block w-100" alt="..."/>
+            </div>
           </div>
-          <div className="carousel-item">
-            <img src="assets/img/gallery/gallery-10.jpg" className="d-block w-100" alt="..."/>
-          </div>
-          <div className="carousel-item">
-            <img src="assets/img/gallery/gallery-11.jpg" className="d-block w-100" alt="..."/>
-          </div>
+          <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
-        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="sr-only">Next</span>
-        </a>
-      </div>
+*/}
 
 {/*
         <header id="header" className="fixed-top">
