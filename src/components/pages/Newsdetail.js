@@ -18,7 +18,7 @@ const NewsDetail=()=>{
             const response = res.data;
             //this.setState({stores:response})
             setData(response);
-            console.log(response);
+            //console.log(response);
           })
         } catch (error) {
           console.error(error);

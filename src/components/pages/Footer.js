@@ -46,7 +46,7 @@ const Footer=()=>{
             <p>
             {contact.address}
             <br/><br/>
-              <strong>Phone:</strong> {contact.phpne}<br/>
+              <strong>Phone:</strong> {contact.phone}<br/>
               <strong>Email:</strong> {contact.email}<br/>
             </p>
           </div>

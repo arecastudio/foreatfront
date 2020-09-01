@@ -12,7 +12,7 @@ const News=()=>{
         .then(res => {
           const response = res.data;
           setNews(response);
-          console.log(response);
+          //console.log(response);
         })
       } catch (error) {
         console.error(error);
