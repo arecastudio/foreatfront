@@ -13,7 +13,7 @@ const Slider=()=>{
       .then(res => {
         const response = res.data;
         setSlider(response);
-        console.log(response);
+        //console.log(response);
       })
     } catch (error) {
       console.error(error);
