@@ -647,7 +647,7 @@ const Home=()=>{
               return(
                 <a href={`/news/${data.slug}`} key={x} className="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div className="member">
-                    <div className="member-img">
+                    <div className="member-img text-center">
                       <img src={data.cover} className="img-fluid" alt=""/>
                       {/*
                       <div className="social">
@@ -660,6 +660,9 @@ const Home=()=>{
                     </div>
                     <div className="member-info">
                       <h4>{data.title}</h4>
+                      <p className="text-justify text-secondary">
+                        Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
+                      </p>
                     </div>
                   </div>
                 </a>

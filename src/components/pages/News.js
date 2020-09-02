@@ -23,8 +23,10 @@ const News=()=>{
     <main className="main" role="main" className="container mt-5">
       <h1>News</h1>
 
-      <section id="team" className="team section-bg">
-        <div className="container">
+      {/*<section id="team" className="team section-bg">
+     <div className="container">
+    */}
+       
 
           <div className="row justify-content-center">
           {
@@ -44,8 +46,11 @@ const News=()=>{
                         </div>
 */}
                       </div>
-                      <div className="member-info">
-                        <h4>{data.title}</h4>
+                      <div className="member-info mb-5">
+                        <h4 className="pt-3">{data.title}</h4>
+                        <p className="text-justify text-secondary">
+                        Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
+                        </p>
                       </div>
                     </div>
                   </a>
@@ -56,8 +61,10 @@ const News=()=>{
           }
           </div>
 
-        </div>
-      </section>
+       
+      {/*
+       </div>
+      </section>*/}
 
 
 
