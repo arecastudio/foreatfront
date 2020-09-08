@@ -9,7 +9,8 @@ const Slider=()=>{
 
       try {
       //axios.get(`http://localhost:8000/imageslider`)
-      axios.get(`http://localhost:3006/dummy/slider.json`)
+      //axios.get(`http://localhost:3006/dummy/slider.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/imageslider`)
       .then(res => {
         const response = res.data;
         setSlider(response);
@@ -22,7 +23,7 @@ const Slider=()=>{
 
     }, []);
 
-    
+
     return(
       <Carousel>
         {
@@ -38,8 +39,8 @@ const Slider=()=>{
                   alt={data.title}
                 />
                 </div>
-                </Carousel.Item>     
-              )                  
+                </Carousel.Item>
+              )
             }
 
           })

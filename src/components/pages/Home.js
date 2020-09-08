@@ -17,6 +17,7 @@ const Home=()=>{
     try {
       //axios.get(`http://localhost:8000/store/${storeid}/`)
       axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
+      //axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
       .then(res => {
         const response = res.data;
         //this.setState({stores:response})
@@ -29,7 +30,8 @@ const Home=()=>{
 
     try {
       //axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
-      axios.get(`http://localhost:3006/dummy/store.json`)
+      //axios.get(`http://localhost:3006/dummy/store.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/store/?query={id, slug, title, cover, isActive}`)
       .then(res => {
         const response = res.data;
         setStores(response);
@@ -41,7 +43,8 @@ const Home=()=>{
 
     try {
       //axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
-      axios.get(`http://localhost:3006/dummy/foreatservice.json`)
+      //axios.get(`http://localhost:3006/dummy/foreatservice.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/store/?query={id, slug, title, cover, isActive}`)
       .then(res => {
         const response = res.data;
         setServis(response);
