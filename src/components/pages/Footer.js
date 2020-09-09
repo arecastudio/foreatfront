@@ -4,20 +4,35 @@ import axios from 'axios';
 const Footer=()=>{
 
   const [contact,setContact]=useState([]);
+  const [servis,setServis]=useState([]);
 
   useEffect(()=>{
     try {
-      //axios.get(`http://localhost:8000/store/${storeid}/`)
-      axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/foreatcontact/`)
+      //axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
       .then(res => {
         const response = res.data;
         //this.setState({stores:response})
-        setContact(response);
+        setContact(response[0]);
         //console.log(response);
       })
     } catch (error) {
       console.error(error);
     }
+
+
+        try {
+          axios.get(`http://dummy.foreat.co.id:8000/store/?query={id, slug, title, cover, isActive}`)
+          .then(res => {
+            const response = res.data;
+            setServis(response);
+            //console.log(response);
+          })
+        } catch (error) {
+          console.error(error);
+        }
+
+
   },[]);
 
     return(
@@ -65,11 +80,26 @@ const Footer=()=>{
           <div className="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i className="bx bx-chevron-right"></i> <a href="/">Web Design</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="/">Web Development</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="/">Product Management</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="/">Marketing</a></li>
-              <li><i className="bx bx-chevron-right"></i> <a href="/">Graphic Design</a></li>
+{/*
+  <li><i className="bx bx-chevron-right"></i> <a href="/">Web Design</a></li>
+  <li><i className="bx bx-chevron-right"></i> <a href="/">Web Development</a></li>
+  <li><i className="bx bx-chevron-right"></i> <a href="/">Product Management</a></li>
+  <li><i className="bx bx-chevron-right"></i> <a href="/">Marketing</a></li>
+  <li><i className="bx bx-chevron-right"></i> <a href="/">Graphic Design</a></li>
+  */}
+
+              {
+                servis.map((data,x)=>{
+                  if(data.isActive==true){
+                    return(
+                      <li key={x}><i className="bx bx-chevron-right"></i> <a href={`/eat-drink/${data.slug}`}>{data.title}</a></li>
+                      )
+                  }
+
+                })
+              }
+
+
             </ul>
           </div>
 

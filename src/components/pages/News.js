@@ -7,8 +7,8 @@ const News=()=>{
 
   useEffect(()=>{
     try {
-      //axios.get(`http://localhost:8000/news/`)
-      axios.get(`http://localhost:3006/dummy/news.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/news/`)
+      //axios.get(`http://localhost:3006/dummy/news.json`)
         .then(res => {
           const response = res.data;
           setNews(response);
@@ -26,7 +26,7 @@ const News=()=>{
       {/*<section id="team" className="team section-bg">
      <div className="container">
     */}
-       
+
 
           <div className="row justify-content-center">
           {
@@ -61,7 +61,7 @@ const News=()=>{
           }
           </div>
 
-       
+
       {/*
        </div>
       </section>*/}

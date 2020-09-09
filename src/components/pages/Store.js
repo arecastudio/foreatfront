@@ -19,8 +19,8 @@ const Store=()=>{
     useEffect(()=>{
 
         try {
-          //axios.get(`http://localhost:8000/store/${storeid}/`)
-          axios.get(`http://localhost:3006/dummy/storeitem.json`)
+          axios.get(`http://dummy.foreat.co.id:8000/store/${storeid}/`)
+          //axios.get(`http://localhost:3006/dummy/storeitem.json`)
           .then(res => {
             const response = res.data;
             //this.setState({stores:response})
@@ -37,8 +37,8 @@ const Store=()=>{
 
     const getStorepromo=(x)=>{
       try {
-        //axios.get(`http://localhost:8000/storepromo`)
-        axios.get(`http://localhost:3006/dummy/storepromo.json`)
+        axios.get(`http://dummy.foreat.co.id:8000/storepromo`)
+        //axios.get(`http://localhost:3006/dummy/storepromo.json`)
         .then(res => {
           const response = res.data;
           //this.setState({stores:response})
@@ -61,7 +61,7 @@ const Store=()=>{
       if(storepromo.length>0){
         return (
           <div className="container" id="#store-promo-part">
-                
+
           <h3>What you get</h3>
           <div className="row mx-0 justify-content-centerXXX bg-darkXXX align-item-stretch">
             {

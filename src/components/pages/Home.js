@@ -9,19 +9,19 @@ const Home=()=>{
   const [slider,setSlider]=useState([]);
   const [servis,setServis]=useState([]);
   const [gallery,setGallery]=useState([]);
-  const [contact,setContact]=useState([]);
+  const [contact,setContact]=useState({});
 
   useEffect(()=>{
 
 
     try {
-      //axios.get(`http://localhost:8000/store/${storeid}/`)
-      axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/foreatcontact/`)
+      //axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
       //axios.get(`http://localhost:3006/dummy/foreatcontact.json`)
       .then(res => {
         const response = res.data;
         //this.setState({stores:response})
-        setContact(response);
+        setContact(response[0]);
         //console.log(response);
       })
     } catch (error) {
@@ -57,8 +57,8 @@ const Home=()=>{
 
 
     try {
-      //axios.get(`http://localhost:8000/news/?query={id, slug, title, cover, created, isActive}`)
-      axios.get(`http://localhost:3006/dummy/news.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/news/?query={id, slug, title, cover, created, isActive}`)
+      //axios.get(`http://localhost:3006/dummy/news.json`)
       .then(res => {
         const response = res.data;
         setNews(response);
@@ -69,8 +69,8 @@ const Home=()=>{
     }
 
     try {
-      //axios.get(`http://localhost:8000/foreatgallery/`)
-      axios.get(`http://localhost:3006/dummy/foreatgallery.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/foreatgallery/`)
+      //axios.get(`http://localhost:3006/dummy/foreatgallery.json`)
       .then(res => {
         const response = res.data;
         setGallery(response);

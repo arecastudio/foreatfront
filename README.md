@@ -1,6 +1,40 @@
 # API Dummy Source
 https://www.mockaroo.com/
 
+## Plans
+
+- Whatsapp Oriented customer service
+- gallery--instagram
+- contact us===delete
+
+
+Eat and Drink nav-top-menu
+Change to:
+- dine in: 4 brands
+- delivery: 4 brand
+
+Store
+example
+sushimasa
+description
+poster, promo
+rating (internal)
+
+connect to instagram
+
+booking
+phone call system
+
+
+
+
+
+
+
+
+
+# SUPPORT
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

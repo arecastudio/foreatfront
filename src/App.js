@@ -25,8 +25,8 @@ function App() {
 
   useEffect(()=>{
     try{
-      //axios.get(`http://localhost:8000/store/?query={id, slug, title, cover, isActive}`)
-      axios.get(`http://localhost:3006/dummy/store.json`)
+      axios.get(`http://dummy.foreat.co.id:8000/store/?query={id, slug, title, cover, isActive}`)
+      //axios.get(`http://localhost:3006/dummy/store.json`)
       .then(res => {
         const response = res.data;
         //this.setState({stores:response})
@@ -75,7 +75,7 @@ function App() {
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">Fishop</a>
+            <a className="nav-link" href="https://fishop.co.id/" target="_blank">Fishop</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/news">News</a>
