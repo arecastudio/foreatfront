@@ -1,4 +1,8 @@
-# API Dummy Source
+# FOREAT Web Frontend
+## Description
+A web interface for restaurant booking system and product ordering
+
+## API Dummy Source
 https://www.mockaroo.com/
 
 ## Plans
